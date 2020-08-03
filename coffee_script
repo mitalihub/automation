@@ -1,15 +1,15 @@
-
-robot.respond /get pipeline details (.*) (.*)/i, (res) ->
-   param1 = res.match[1]
-   param2 = res.match[2]
-   if cmd1 is "asrmobilekokr"
+ module.exports = (robot) ->
+  robot.respond /get pipeline details (.*) (.*)/i, (res) ->
+     param1 = res.match[1]
+     param2 = res.match[2]
+     res.reply "getting #{param1} - #{param2}  metadata"
+   
+   
+   
+#   if cmd1 is "asrmobilekokr"
      #if cmd2 is "int-Deploy"
       #res.reply "I'm afraid I can't let you do that."
      if
    #else
   #   res.reply "Opening #{doorType} doors"
-
-
-
-
-s = spawn 'python3], [url, title]
+#s = spawn 'python3], [url, title]
