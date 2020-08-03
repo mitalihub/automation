@@ -3,7 +3,30 @@
      param1 = res.match[1]
      param2 = res.match[2]
      res.reply "getting #{param1} - #{param2}  metadata"
-   
+ --------------------------------------------------------------------------
+ module.exports = (robot) ->
+  robot.respond /get pipeline details (.*) (.*)/i, (res) ->
+     param1 = res.match[1]
+     param2 = res.match[2]
+     res.reply "getting #{param1} - #{param2}  metadata"
+     
+     var myPythonScriptPath = '/home/ubuntu/chatops/hubot/scripts/hello.py';
+     var PythonShell = require('python-shell');
+     var pyshell = new PythonShell(myPythonScriptPath);
+     pyshell.on('message', function (message) {
+     console.log(message);
+     res.reply "#{message}"
+     });
+     pyshell.end(function (err) {
+    if (err){
+        throw err;
+    };
+
+    console.log('finished');
+});
+ 
+ 
+ ------------------------------------------------------------------------
    
    
 #   if cmd1 is "asrmobilekokr"
